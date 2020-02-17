@@ -1,6 +1,6 @@
 import pandas as pd
 
-dataTitanic = pd.read_csv('C:/Users/wooch/Desktop/zadania/titanic.csv')
+dataTitanic = pd.read_csv('titanic.csv')
 
 print( dataTitanic.shape)
 print(dataTitanic.columns)
