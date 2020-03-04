@@ -7,3 +7,5 @@ print( pasengersData.head() )
 thirdClassPassengers = pasengersData[ (pasengersData['Pclass'] == 3) & (pasengersData['Embarked'] == 'Q') ]
 
 print( thirdClassPassengers.head() )
+
+thirdClassPassengers.to_csv( 'titanicthirdClass.csv', ',')
