@@ -1,12 +1,9 @@
 import pandas as pd
 
-drinksData = pd.read_csv('http://bit.ly/drinksbycountry')
+pasengersData = pd.read_csv('titanic.csv')
 
-print( drinksData.head() )
+print( pasengersData.head() )
 
+thirdClassPassengers = pasengersData[ (pasengersData['Pclass'] == 3) & (pasengersData['Embarked'] == 'Q') ]
 
-print( drinksData.dtypes )
-
-drinksData['beer_servings'] = drinksData['beer_servings'].astype(float)
-
-print( drinksData.dtypes )
+print( thirdClassPassengers.head() )
