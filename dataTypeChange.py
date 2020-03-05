@@ -9,3 +9,7 @@ thirdClassPassengers = pasengersData[ (pasengersData['Pclass'] == 3) & (pasenger
 print( thirdClassPassengers.head() )
 
 thirdClassPassengers.to_csv( 'titanicthirdClass.csv', ',')
+
+pasengersData['Name'].str.upper()
+
+print( thirdClassPassengers.head() )
