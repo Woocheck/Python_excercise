@@ -10,6 +10,8 @@ print( thirdClassPassengers.head() )
 
 thirdClassPassengers.to_csv( 'titanicthirdClass.csv', ',')
 
-pasengersData['Name'].str.upper()
+pasengersData['Name'] = pasengersData['Name'].str.upper()
 
-print( thirdClassPassengers.head() )
+print( pasengersData.head() )
+
+print(pasengersData.dtypes)
