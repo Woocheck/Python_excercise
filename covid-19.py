@@ -14,12 +14,9 @@ confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-
 
 #print( confirmed.head() )
 x = confirmed.columns[ 4:]
-y = confirmed.loc[ confirmed['Country/Region'] == 'Germany' ]
-x = x[4:]
-y = y[4:]
-#print( x )
-print('row\n')
-print( y )
-#diagram( x, y )
+y = confirmed[ confirmed['Country/Region'] == 'Germany' ]
+print( x.shape )
+print( y[4:].shape )
+diagram( x, y )
 
 
