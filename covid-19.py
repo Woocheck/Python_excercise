@@ -1,10 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def plotSingleCountry( country ):
-    selsctedCountries = confirmed[ confirmed['Country/Region'] == country ].transpose()
-    selsctedCountries[4:].plot()
-
 def plotConfirmed( listCountries ):
     
     selsctedCountries = confirmed[ confirmed['Country/Region'].isin(listCountries) ].transpose()
@@ -14,9 +10,7 @@ def plotConfirmed( listCountries ):
     plt.title( 'Total Confirmed In Selected Countries' )
     plt.show()
 
-
 confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv')
-
 plotConfirmed(['Poland','Germany','Italy','France']) 
 
 
