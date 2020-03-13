@@ -8,9 +8,10 @@ def plotConfirmed( listCountries ):
     selsctedCountries[4:].plot()
     
     plt.title( 'Total Confirmed In Selected Countries' )
+    plt.grid()
     plt.show()
 
 confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv')
-plotConfirmed(['Poland','Germany','Italy','France']) 
+plotConfirmed(['Poland','Germany','Italy']) 
 
 
