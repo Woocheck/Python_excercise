@@ -12,6 +12,8 @@ def plotConfirmed( listCountries ):
     plt.show()
 
 confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv')
-plotConfirmed(['Poland','Germany','Italy']) 
+
+countries = confirmed['Country/Region'].unique()
+plotConfirmed( countries ) 
 
 
