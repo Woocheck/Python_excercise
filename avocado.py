@@ -6,4 +6,4 @@ avocadoDS = pd.read_csv('https://query.data.world/s/xjgixhlxpuzocwyhznapqgynkv66
 print( avocadoDS.head() )
 
 print( avocadoDS['Year'].unique() )
-print( avocadoDS['Region'].unique() )
+print( pd.crosstab( avocadoDS['Small Hass'], avocadoDS['Year']  ) )
