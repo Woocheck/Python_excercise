@@ -7,3 +7,6 @@ print( avocadoDS.head() )
 
 print( avocadoDS['Year'].unique() )
 print( pd.crosstab( avocadoDS['Small Hass'], avocadoDS['Year']  ) )
+
+atlantaDS = avocadoDS[ (avocadoDS['Region'] == 'Atlanta') &  (avocadoDS['Type'] == 'conventional')]
+
