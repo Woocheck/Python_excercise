@@ -8,3 +8,6 @@ print( drinks.columns )
 
 drinksNoHead = pd.read_table( 'http://bit.ly/movieusers', header = None, sep='|')
 print( drinksNoHead.head() )
+
+drinks.set_index( 'country', inplace = True )
+print( drinks.head())
