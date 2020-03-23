@@ -14,3 +14,7 @@ print( drinks.head())
 
 drinks.index.name = None
 print( drinks.head())
+
+drinks.index.name = 'country'
+drinks.reset_index( inplace = True )
+print( drinks.head())
