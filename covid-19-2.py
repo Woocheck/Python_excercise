@@ -17,11 +17,20 @@ def plotActivecases( listCountries ):
     plt.grid()
     plt.show()
 
+def plotDeathdCases( listCountries ):
+    
+    newdeaths.plot(x ='date', y=listCountries, kind = 'line')
+    
+    plt.title( 'Daily Confirmed Deaths In Selected Countries' )
+    plt.grid()
+    plt.show()
+
 confirmed = pd.read_csv('https://covid.ourworldindata.org/data/ecdc/total_cases.csv')
-newcases =  pd.read_csv('https://covid.ourworldindata.org/data/ecdc/new_deaths.csv')
+newcases = pd.read_csv('https://covid.ourworldindata.org/data/ecdc/new_cases.csv')
+newdeaths =  pd.read_csv('https://covid.ourworldindata.org/data/ecdc/new_deaths.csv')
 
-countries = confirmed.columns
-print( countries)
-plotConfirmed( ['Poland', 'Germany','Italy', 'Spain','United Kingdom', 'United States', 'China'] )
-
+selectedCountries = ['Poland', 'Germany','Italy', 'Spain','United Kingdom', 'United States', 'China']
+plotConfirmed( selectedCountries )
+plotDeathdCases( selectedCountries )
+plotActivecases( selectedCountries )
 
