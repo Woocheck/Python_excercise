@@ -15,6 +15,6 @@ confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-
 
 countries = confirmed['Country/Region'].unique()
 
-plotConfirmed( ['Poland', 'Germany','Italy', 'Spain', 'Portugal'] )
+plotConfirmed( ['Poland', 'Germany','Italy', 'Spain'] )
 
 
