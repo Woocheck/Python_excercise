@@ -27,7 +27,7 @@ def plotDeathdCases( listCountries ):
 
 def plotTotalDeathdCases( listCountries ):
     
-    newdeaths.plot(x ='date', y=listCountries, kind = 'line')
+    totaldeaths.plot(x ='date', y=listCountries, kind = 'line')
     
     plt.title( 'Total Deaths In Selected Countries' )
     plt.grid()
