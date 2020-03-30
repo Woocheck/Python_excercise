@@ -1,35 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def plotConfirmed( listCountries ):
+def plotCases( listCountries, data, diagramTitle ):
     
-    confirmed.plot(x ='date', y=listCountries, kind = 'line')
+    data.plot(x ='date', y=listCountries, kind = 'line')
     
-    plt.title( 'Total Confirmed In Selected Countries' )
-    plt.grid()
-    plt.show()
-
-def plotActivecases( listCountries ):
-    
-    newcases.plot(x ='date', y=listCountries, kind = 'line')
-    
-    plt.title( 'Daily Confirmed Cases In Selected Countries' )
-    plt.grid()
-    plt.show()
-
-def plotDeathdCases( listCountries ):
-    
-    newdeaths.plot(x ='date', y=listCountries, kind = 'line')
-    
-    plt.title( 'Daily Confirmed Deaths In Selected Countries' )
-    plt.grid()
-    plt.show()
-
-def plotTotalDeathdCases( listCountries ):
-    
-    totaldeaths.plot(x ='date', y=listCountries, kind = 'line')
-    
-    plt.title( 'Total Deaths In Selected Countries' )
+    plt.title( diagramTitle )
     plt.grid()
     plt.show()
 
@@ -39,8 +15,8 @@ newdeaths =  pd.read_csv('https://covid.ourworldindata.org/data/ecdc/new_deaths.
 totaldeaths = pd.read_csv('https://covid.ourworldindata.org/data/ecdc/total_deaths.csv')
 selectedCountries = ['Poland', 'Germany','Italy', 'Spain','United Kingdom', 'United States', 'China']
 
-plotConfirmed( selectedCountries )
-plotDeathdCases( selectedCountries )
-plotTotalDeathdCases( selectedCountries )
-plotActivecases( selectedCountries )
+plotCases( selectedCountries, confirmed,'Total Confirmed In Selected Countries')
+plotCases( selectedCountries, newdeaths, 'Daily Confirmed Deaths In Selected Countries' )
+plotCases( selectedCountries, totaldeaths, 'Total Deaths In Selected Countries' )
+plotCases( selectedCountries, newcases, 'Daily Confirmed Cases In Selected Countries' )
 
