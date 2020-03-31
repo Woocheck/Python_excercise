@@ -17,7 +17,8 @@ totaldeaths = pd.read_csv('https://covid.ourworldindata.org/data/ecdc/total_deat
 selectedCountries = ['Poland', 'Germany','Italy', 'Spain','United Kingdom', 'United States', 'China','Czech Republic']
 
 plotCases( selectedCountries, confirmed,'Total Confirmed In Selected Countries')
+plotCases( selectedCountries, newcases, 'Daily Confirmed Cases In Selected Countries' )
 plotCases( selectedCountries, newdeaths, 'Daily Confirmed Deaths In Selected Countries' )
 plotCases( selectedCountries, totaldeaths, 'Total Deaths In Selected Countries' )
-plotCases( selectedCountries, newcases, 'Daily Confirmed Cases In Selected Countries' )
+
 
