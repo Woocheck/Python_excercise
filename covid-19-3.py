@@ -1,13 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def plotCases( nr, listCountries, data, diagramTitle ):
+def plotCases( row, column, listCountries, data, diagramTitle ):
     
-    plt.subplot(2, 2, nr)
-    data.plot(x ='date', y=listCountries, kind = 'line')
-    
-    #plt.title( diagramTitle )
-    plt.grid()
+    data.plot(ax=axes[row,column], x ='date', y=listCountries, kind = 'line' )
+        
+    plt.title( diagramTitle )
     
 
 confirmed = pd.read_csv('https://covid.ourworldindata.org/data/ecdc/total_cases.csv')
@@ -17,15 +15,11 @@ totaldeaths = pd.read_csv('https://covid.ourworldindata.org/data/ecdc/total_deat
 
 selectedCountries = ['Poland', 'Germany','Italy', 'Spain','United Kingdom', 'United States', 'China','Czech Republic']
 
-fig = plt.figure()
+fig, axes = plt.subplots(nrows=2, ncols=2)
+plotCases( 0, 0, selectedCountries, confirmed,'Total Confirmed In Selected Countries')
+plotCases( 0, 1, selectedCountries, newcases, 'Daily Confirmed Cases In Selected Countries' )
+plotCases( 1, 0, selectedCountries, newdeaths, 'Daily Confirmed Deaths In Selected Countries' )
+plotCases( 1, 1, selectedCountries, totaldeaths, 'Total Deaths In Selected Countries' )
 
-plt.subplot(2, 2, 1)
-confirmed.plot( x ='date', y=selectedCountries ) #,'Total Confirmed In Selected Countries')
-plt.subplot(2, 2, 2)
-newcases.plot( x ='date', y=selectedCountries )# 'Daily Confirmed Cases In Selected Countries' )
-plt.subplot(2, 2, 3)
-newdeaths.plot( x ='date', y=selectedCountries )# 'Daily Confirmed Deaths In Selected Countries' )
-plt.subplot(2, 2, 4)
-totaldeaths.plot( x ='date', y=selectedCountries )# 'Total Deaths In Selected Countries' )
-
+plt.grid()
 plt.show()
