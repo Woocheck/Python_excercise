@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def plotCases( row, column, listCountries, data, diagramTitle ):
-    data.plot(ax=axes[row,column], x ='date', y=listCountries, kind = 'line', title = diagramTitle, grid = True, fontsize = 6, figsize = ( 8, 8.5 ) )
+    data.plot(ax=axes[row,column], x ='date', y=listCountries, kind = 'line', title = diagramTitle, grid = True, fontsize = 6, figsize = ( 8, 8.6 ) )
 
 confirmed = pd.read_csv('https://covid.ourworldindata.org/data/ecdc/total_cases.csv')
 newcases = pd.read_csv('https://covid.ourworldindata.org/data/ecdc/new_cases.csv')
