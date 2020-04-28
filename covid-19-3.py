@@ -9,7 +9,7 @@ newcases = pd.read_csv('https://covid.ourworldindata.org/data/ecdc/new_cases.csv
 newdeaths =  pd.read_csv('https://covid.ourworldindata.org/data/ecdc/new_deaths.csv')
 totaldeaths = pd.read_csv('https://covid.ourworldindata.org/data/ecdc/total_deaths.csv')
 
-selectedCountries = ['Poland', 'Germany', 'Sweden', 'South Korea', 'Czech Republic', 'Japan']
+selectedCountries = ['Poland', 'Germany', 'Sweden', 'South Korea', 'Czech Republic', 'Italy', 'Japan']
 
 fig, axes = plt.subplots(nrows=2, ncols=2)
 plotCases( 0, 0, selectedCountries, confirmed,'Total Confirmed')
