@@ -17,4 +17,10 @@ plotCases( 0, 1, selectedCountries, newcases, 'Daily Confirmed' )
 plotCases( 1, 0, selectedCountries, newdeaths, 'Daily Confirmed Deaths' )
 plotCases( 1, 1, selectedCountries, totaldeaths, 'Total Deaths' )
 
+fig, axes = plt.subplots(nrows=2, ncols=2)
+plotCases( 0, 0, selectedCountries, confirmed,'Total Confirmed')
+plotCases( 0, 1, selectedCountries, newcases, 'Daily Confirmed' )
+plotCases( 1, 0, selectedCountries, newdeaths, 'Daily Confirmed Deaths' )
+plotCases( 1, 1, selectedCountries, totaldeaths, 'Total Deaths' )
+
 plt.show()
