@@ -1,16 +1,9 @@
-from serpwow.google_search_results import GoogleSearchResults
-import json
+import pandas as pd #pandas 0.25
+from pytrends.request import TrendReq
+pytrend = TrendReq()
 
-# create the serpwow object, passing in our API key
-serpwow = GoogleSearchResults("demo")
+trending_searches_df = pytrend.trending_searches(pn='poland')
+print(trending_searches_df.head(40))
 
-# set up a dict for the search parameters
-params = {
-  "q" : "pizza"
-}
-
-# retrieve the search results as JSON
-result = serpwow.get_json(params)
-
-# pretty-print the result
-print(json.dumps(result, indent=2, sort_keys=True))
+today_searches = pytrend.today_searches(pn='US')
+print(today_searches.head(40))
