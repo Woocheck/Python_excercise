@@ -26,7 +26,8 @@ today_searches_df = pytrend.today_searches()
 print(today_searches_df.head(20))
 
 # Get Google Top Charts
-top_charts_df = pytrend.top_charts(date = 2020, hl='en-US', tz=300, geo='PL')
+print('Get Google Top Charts\n')
+top_charts_df = pytrend.top_charts( 2020, hl='en-US', tz=300, geo='US')
 print(top_charts_df.head(20))
 
 # Get Google Keyword Suggestions
