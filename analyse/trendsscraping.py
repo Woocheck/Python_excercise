@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 pytrends = TrendReq()
 
-kw_list = ["Wuhan", "covid", "covid-19", "Italy" ,"on"]
+kw_list = ["Wuhan", "covid", "covid-19", "Italy" , "China"]
 pytrends.build_payload(kw_list, cat=0, timeframe='2019-12-01 2020-05-12', geo='', gprop='')
 
 dfpl = pytrends.interest_over_time()
