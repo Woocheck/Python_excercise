@@ -17,3 +17,4 @@ url = host +"/"+ currency[1] +"/"+ str(year) + beginDate +"/"+ str(year) + endDa
 data = json.loads(requests.get(url).text)
 
 df = pd.DataFrame.from_dict(data, orient='columns')
+print(df.head())

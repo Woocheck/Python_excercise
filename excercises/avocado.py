@@ -10,4 +10,3 @@ print( pd.crosstab( avocadoDS['Small Hass'], avocadoDS['Year']  ) )
 
 atlantaDS = avocadoDS[ (avocadoDS['Region'] == 'Atlanta') &  (avocadoDS['Type'] == 'conventional')]
 
-print(df.head())
