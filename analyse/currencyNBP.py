@@ -5,16 +5,14 @@ from urllib.parse import urlencode
 import pandas as pd
 
 
+def currencyYear( year, currency ):
+    """Return currency quotationsfor selected year, and list of currencyes """
+    
+    host = "http://api.nbp.pl/api/exchangerates/rates/a"
+    url = host +"/"+ currency +"/"+ str(year) + "-01-01/"+ str(year) + "-12-31/"
 
-host = "http://api.nbp.pl/api/exchangerates/rates/a"
-currency = [ "usd", "gbp", "eur", "jpy" ]
-
-year = 2019
-beginDate = "-01-01"
-endDate = "-12-31"
-url = host +"/"+ currency[1] +"/"+ str(year) + beginDate +"/"+ str(year) + endDate +"/?"
-
-data = json.loads(requests.get(url).text)
-
-df = pd.DataFrame.from_dict(data, orient='columns')
-print(df.head())
+    data = json.loads(requests.get(url).text)
+    df = pd.DataFrame.from_dict(data, orient='columns')
+    
+    return df
+    
