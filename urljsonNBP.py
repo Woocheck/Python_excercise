@@ -2,8 +2,7 @@
 import json
 import requests
 from urllib.parse import urlencode
-
-
+import pandas as pd
 
 
 
@@ -20,6 +19,8 @@ adres = url + urlencode(returnedFormat)
 
 print( adres )
 
-response = json.loads(requests.get(url).text)
+data = json.loads(requests.get(url).text)
 
-print(json.dumps(response, indent=4, sort_keys=True))
+print(json.dumps(data, indent=4, sort_keys=True))
+
+df = pd.DataFrame.from_dict(data, orient='columns')
