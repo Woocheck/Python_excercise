@@ -2,7 +2,7 @@ import requests
 import lxml.html as lh
 import pandas as pd
 
-url='http://pokemondb.net/pokedex/all'
+url='https://www.orlen.pl/PL/DlaBiznesu/HurtoweCenyPaliw/Strony/archiwum-cen.aspx?Fuel=Pb95&Year=2020'
 
 #Create a handle, page, to handle the contents of the website
 page = requests.get(url)
@@ -12,7 +12,7 @@ doc = lh.fromstring(page.content)
 tr_elements = doc.xpath('//tr')
 
 #Check the length of the first 12 rows
-[len(T) for T in tr_elements[:12]]
+[print( len(T) ) for T in tr_elements[:12]]
 
 tr_elements = doc.xpath('//tr')
 #Create empty list
