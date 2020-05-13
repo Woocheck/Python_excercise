@@ -5,7 +5,7 @@ from urllib.parse import urlencode
 import pandas as pd
 
 
-def currencyYear( year, currency ):
+def notowaniaRok( year, currency ):
     """Return currency quotationsfor selected year, and list of currencyes """
     
     host = "http://api.nbp.pl/api/exchangerates/rates/a"
