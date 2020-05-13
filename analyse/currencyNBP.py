@@ -22,12 +22,10 @@ def notowaniaRok( rok, waluta ):
 
 def notowaniaLata( poczatek, koniec, waluta):
     """Zwraca notowania waluty dla przedziału podango w latach"""
-    rezultat = pd.DataFrame(columns = ['effectiveDate','mid'])
+    daneNBP = pd.DataFrame(columns = ['effectiveDate','mid'])
     for rok in range( 0,(koniec - poczatek+1)):
         daneRok = notowaniaRok( poczatek+rok, waluta ) 
-        daneNBP = pd.concat([daneRok.drop('rates', axis=1), pd.DataFrame(daneRok['rates'].tolist())], axis=1)[['effectiveDate','mid']]    
-        rezultat = rezultat.append(daneNBP)
-    return rezultat
-    
-
-print( notowaniaLata(2018,2020,"eur"))
+        daneNBP = daneNBP.append( pd.concat([daneRok.drop('rates', axis=1), \
+                                  pd.DataFrame(daneRok['rates'].tolist())], \
+                                  axis=1)[['effectiveDate','mid']] )   
+    return daneNBP
