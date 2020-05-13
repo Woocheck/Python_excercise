@@ -10,9 +10,7 @@ fig, axes = plt.subplots(nrows=2, ncols=2)
 x = 0
 y = 0
 for element in currences:
-   df = nbp.notowaniaRok( 2019, element )
-   daneNBP = pd.concat([df.drop('rates', axis=1), pd.DataFrame(df['rates'].tolist())], axis=1)
-   notowania = daneNBP[['effectiveDate','mid']]
+   notowania = nbp.notowaniaLata( 2018, 2020, element ) 
    plotCases( x%2, y%2,  notowania, element )
    x+=1
    if x%2:
