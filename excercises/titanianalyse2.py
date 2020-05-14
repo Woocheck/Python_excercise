@@ -2,7 +2,7 @@ import pandas as pd
 import pylab as plb
 import matplotlib.pyplot as plt
 
-titanicPassengers = pd.read_csv('titanic.csv')
+titanicPassengers = pd.read_csv('C:/Users/wooch/Documents/GitHub/Python_excercise/excercises/titanic.csv')
 
 print( titanicPassengers )
 
