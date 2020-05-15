@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 import re
 from urllib.parse import urlencode
+import pandas as pd
 
 def hurtoweCenyRopy( dataPoczatek, dataKoniec, rodzajPaliwa):
     listaWynik = []
@@ -23,7 +24,7 @@ def hurtoweCenyRopy( dataPoczatek, dataKoniec, rodzajPaliwa):
         kwota = notowanie[10:]
         slownikGotoweDane[data] = int(kwota)
     
-    return slownikGotoweDane
+    return pd.DataFrame.from_dict(slownikGotoweDane, orient='index')
     
     
 print( hurtoweCenyRopy(2018,2020,'Pb95'))
