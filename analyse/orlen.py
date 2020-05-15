@@ -4,7 +4,7 @@ import re
 from urllib.parse import urlencode
 import pandas as pd
 
-def hurtoweCenyRopy( dataPoczatek, dataKoniec, rodzajPaliwa):
+def hurtoweCenyPaliw( dataPoczatek, dataKoniec, rodzajPaliwa):
     listaWynik = []
     slownikGotoweDane = {}
     #pobieranie daneych tekstowych ze stony
@@ -27,4 +27,4 @@ def hurtoweCenyRopy( dataPoczatek, dataKoniec, rodzajPaliwa):
     return pd.DataFrame.from_dict(slownikGotoweDane, orient='index')
     
     
-print( hurtoweCenyRopy(2018,2020,'Pb95'))
+print( hurtoweCenyPaliw(2018,2020,'Pb95'))
