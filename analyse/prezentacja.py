@@ -1,9 +1,10 @@
 import currencyNBP as nbp
 import matplotlib.pyplot as plt
 import pandas as pd
+import trendsscraping as trends
 
 def plotCases( row, column,  notowania, nazwaWaluty ):
-    notowania.plot(ax=axes[row,column], x = 'effectiveDate', y = 'mid', kind = 'line', title = nazwaWaluty, grid = True, fontsize = 6, figsize = ( 8, 8.66 ) )
+    notowania.plot(ax=axes[row,column], y = 'mid', kind = 'line', title = nazwaWaluty, grid = True, fontsize = 6, figsize = ( 8, 8.66 ) )
 
 waluty = [ "usd", "gbp", "eur", "jpy" ]
 
@@ -16,5 +17,10 @@ for waluta in waluty:
    x+=1
    if x%2:
        y+=1
+
+
+listaHasel = ["Wuhan", "covid", "covid-19", "Italy" , "China"]
+trendy = trends.trendsInterestOverTime( '2019-01-01', '2020-05-15',listaHasel)
+trendy.plot()
 
 plt.show()

@@ -7,11 +7,8 @@ def trendsInterestOverTime( dataPoczatek, dataKoniec, listaHasel):
     przedzial = dataPoczatek+' '+dataKoniec
     pytrends.build_payload(listaHasel, cat=0, timeframe= przedzial, geo='', gprop='')
     wynik = pytrends.interest_over_time()
+    del wynik['isPartial']
     return wynik
 
 
 
-listaHasel = ["Wuhan", "covid", "covid-19", "Italy" , "China"]
-trendy = trendsInterestOverTime( '2018-01-01', '2020-05-15',listaHasel)
-trendy.plot()
-plt.show()
