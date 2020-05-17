@@ -27,5 +27,6 @@ def notowaniaLata( poczatek, koniec, waluta):
         daneRok = notowaniaRok( poczatek+rok, waluta ) 
         daneNBP = daneNBP.append( pd.concat([daneRok.drop('rates', axis=1), \
                                   pd.DataFrame(daneRok['rates'].tolist())], \
-                                  axis=1)[['effectiveDate','mid']] )   
+                                  axis=1)[['effectiveDate','mid']] ) 
+    daneNBP = daneNBP.set_index('effectiveDate')  
     return daneNBP

@@ -4,6 +4,7 @@ import pandas as pd
 
 def plotCases( row, column,  notowania, nazwaWaluty ):
     notowania.plot(ax=axes[row,column], x = 'effectiveDate', y = 'mid', kind = 'line', title = nazwaWaluty, grid = True, fontsize = 6, figsize = ( 8, 8.66 ) )
+
 waluty = [ "usd", "gbp", "eur", "jpy" ]
 
 fig, axes = plt.subplots(nrows=2, ncols=2)
