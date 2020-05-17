@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 def trendsInterestOverTime( dataPoczatek, dataKoniec, listaHasel):
     pytrends = TrendReq()
     przedzial = dataPoczatek+' '+dataKoniec
-    print(przedzial)
     pytrends.build_payload(listaHasel, cat=0, timeframe= przedzial, geo='', gprop='')
     wynik = pytrends.interest_over_time()
     return wynik
