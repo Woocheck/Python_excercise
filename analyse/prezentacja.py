@@ -17,7 +17,10 @@ def wykresCzteryWaluty( dataPoczatek, dataKoniec, waluty ):
        x+=1
        if x%2:
            y+=1
-    plt.show()
+    plt.savefig('czteryWaluty', dpi=None, facecolor='w', edgecolor='w',\
+        orientation='portrait', papertype=None, format=None,\
+        transparent=False, bbox_inches=None, pad_inches=0.1,\
+        frameon=None, metadata=None)
 
 
 listaHasel = ["Wuhan", "covid", "covid-19", "Italy" , "China"]
