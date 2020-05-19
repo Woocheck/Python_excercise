@@ -1,7 +1,7 @@
 import currencyNBP as nbp
 import orlen
 import trendsscraping as trends
-import prezentacja as pr
+import prezentacjaNBP as pr
 
 waluty = [ "usd", "gbp", "eur", "chf" ]
 print(orlen.hurtoweCenyPaliw(2019,2020,'Pb95') )
