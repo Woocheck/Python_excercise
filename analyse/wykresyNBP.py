@@ -1,7 +1,6 @@
 import currencyNBP as nbp
 import matplotlib.pyplot as plt
 import pandas as pd
-import trendsscraping as trends
 import matplotlib.ticker as plticker
 
 def wykresJednaWaluta( row, column,  notowania, nazwaWaluty, axes ):
@@ -39,6 +38,7 @@ def wykresCzteryNaJeden( dataPoczatek, dataKoniec, waluty ):
         orientation='portrait', papertype='a4', format=None,\
         transparent=False, bbox_inches=None, pad_inches=0.1,\
         frameon=None, metadata=None)  
+        
       
 
 
