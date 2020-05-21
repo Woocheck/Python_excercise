@@ -10,6 +10,14 @@ def trendsDlaPzedzialuCzasu( dataPoczatek, dataKoniec, listaHasel):
     del wynik['isPartial']
     return wynik
 def obliczSrednia( dane ):
-    Dane['Średnia'] = wynik.mean(axis=1)
+    dane['Średnia'] = dane.mean(axis=1)
+    return dane
+
+def korelacja( dane ):
+    """Funkcja zwraca graficzną wersję tabeli korelacji."""
+
+    korelacja = dane.corr()
+    korelacja.style.background_gradient(cmap='coolwarm')
+   
 
 
