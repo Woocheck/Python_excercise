@@ -5,7 +5,7 @@ import matplotlib.ticker as plticker
 
 
 def wykresDlaListy( dataPoczatek, dataKoniec, listaHasel ):
-    daneTrends = trends.trendsInterestOverTime( dataPoczatek, dataKoniec, listaHasel)
+    daneTrends = trends.trendsDlaPzedzialuCzasu( dataPoczatek, dataKoniec, listaHasel)
     daneTrends.plot()
     plt.show()
 
