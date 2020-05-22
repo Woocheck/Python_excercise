@@ -52,27 +52,28 @@ def wykresCzteryWaluty( dataPoczatek, dataKoniec, waluty ):
     x = 0
     y = 0
     for waluta in waluty:
-       notowania = notowaniaLata( 2019, 2020, waluta ) 
+       notowania = notowaniaLata( int(dataPoczatek[:4]), int(dataKoniec[:4]), waluta ) 
        wykresJednaWaluta( x%2, y%2,  notowania, waluta, axes )
+       axes[ x%2, y%2 ].legend()
        x+=1
        if x%2:
            y+=1
-    plt.savefig('czteryWaluty', dpi=None, facecolor='w', edgecolor='w',\
-        orientation='portrait', papertype='a4', format=None,\
-        transparent=False, bbox_inches=None, pad_inches=0.1,\
-        frameon=None, metadata=None)
+    plt.xlabel("Data")
+    plt.savefig( 'notowanieCzteryWaluty', dpi=None, facecolor='w', edgecolor='w',\
+                orientation='portrait', papertype='a4', format=None,\
+                transparent=False, bbox_inches=None, pad_inches=0.1,\
+                metadata=None )
 
-def wykresWalutyNaJeden( dataPoczatek, dataKoniec, waluty ):
+def wykresyWalutRazem( kursy_walut ):
     """Przygotowuje wykres listy walut, dla podanego przedziału w latach"""
-    fig, ax = plt.subplots()
-    loc = plticker.MultipleLocator(base=60)
-    ax.xaxis.set_major_locator(loc)
-    ax.grid()
-    for waluta in waluty:
-        notowanie = notowaniaLata( int(dataPoczatek[:4]), int(dataKoniec[:4]), waluta )
-        ax.plot( notowanie.index, notowanie['mid'], label ='linear')
-
-    fig.savefig('walutyJedenWykres', dpi=None, facecolor='w', edgecolor='w',\
+        
+    kursy_walut.plot( title = ('Kursy walut na podstawie danych NBP'),\
+                      grid = True,\
+                      fontsize = 8,\
+                      figsize = ( 8, 8 ))
+    plt.legend()
+    plt.xlabel("Data")
+    plt.savefig('trendsDaneWykres', dpi=None, facecolor='w', edgecolor='w',\
                 orientation='portrait', papertype='a4', format=None,\
                 transparent=False, bbox_inches=None, pad_inches=0.1,\
                 metadata=None)
