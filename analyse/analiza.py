@@ -3,7 +3,7 @@ import notowaniaNBP as nbp
 import orlen
 import googletrends as trends
 import matplotlib.pyplot as plt
-
+import zestawienie
 
 #Przedział czasu rozpatrywany w analizie
 data_poczatek = '2019-12-01'
