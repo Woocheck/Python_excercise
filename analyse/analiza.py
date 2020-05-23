@@ -2,6 +2,7 @@ import pandas as pd
 import notowaniaNBP as nbp
 import orlen
 import googletrends as trends
+import matplotlib.pyplot as plt
 
 
 #Przedział czasu rozpatrywany w analizie
@@ -33,4 +34,4 @@ nbp.wykresyWalutRazem( kursy_walut )
 #3. Średnie ceny paliwa - Orlen
 orlen.wykresCenyPaliw( hurtowe_ceny_paliw )
 
-#Zestawienie 
+#Analiza
