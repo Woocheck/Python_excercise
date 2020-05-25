@@ -34,4 +34,5 @@ nbp.wykresyWalutRazem( kursy_walut )
 #3. Średnie ceny paliwa - Orlen
 orlen.wykresCenyPaliw( hurtowe_ceny_paliw )
 
+
 #Analiza
