@@ -3,7 +3,7 @@ import notowaniaNBP as nbp
 import orlen
 import googletrends as trends
 import matplotlib.pyplot as plt
-import zestawienie
+
 
 #Przedział czasu rozpatrywany w analizie
 data_poczatek = '2019-12-01'
@@ -15,7 +15,6 @@ lista_hasel = [ "Wuhan", "covid", "covid-19", "Italy" , "China" ]
 trends_dane = trends.trendsDlaPzedzialuCzasu( data_poczatek, data_koniec, lista_hasel )
 srednia = trends.obliczSrednia( trends_dane )
 korelacja = trends.korelacja( trends_dane )
-
 #2. Kursy walut - dnae z NBP
 lista_walut = [ "usd", "gbp", "eur", "chf" ]
 kursy_walut = nbp.kursyWalutNBP( data_poczatek, data_koniec, lista_walut )
@@ -34,4 +33,3 @@ nbp.wykresyWalutRazem( kursy_walut )
 #3. Średnie ceny paliwa - Orlen
 orlen.wykresCenyPaliw( hurtowe_ceny_paliw )
 
-#Analiza

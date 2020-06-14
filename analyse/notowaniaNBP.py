@@ -1,7 +1,6 @@
 
 import json
 import requests
-#from urllib.parse import urlencode
 import pandas as pd
 import datetime
 import matplotlib.pyplot as plt
@@ -73,7 +72,7 @@ def wykresyWalutRazem( kursy_walut ):
                       figsize = ( 8, 8 ))
     plt.legend()
     plt.xlabel("Data")
-    plt.savefig('trendsDaneWykres', dpi=None, facecolor='w', edgecolor='w',\
+    plt.savefig('kursyWalutRazemDaneWykres', dpi=None, facecolor='w', edgecolor='w',\
                 orientation='portrait', papertype='a4', format=None,\
                 transparent=False, bbox_inches=None, pad_inches=0.1,\
                 metadata=None)

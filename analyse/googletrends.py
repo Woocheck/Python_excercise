@@ -16,7 +16,7 @@ def trendsDlaPzedzialuCzasu( dataPoczatek, dataKoniec, listaHasel):
 
 def obliczSrednia( dane ):
     """Funkcja oblicza średnią i umieszcza wynik w osobnej kolumnie."""
-    dane['Średnia'] = dane.mean(axis=1)
+    dane['Średnia występowania haseł'] = dane.mean(axis=1)
     return dane
 
 def korelacja( dane ):
@@ -51,7 +51,7 @@ def wykresSrednia( dane ):
     loc = plticker.MultipleLocator(base=60)
     ax.xaxis.set_major_locator(loc)
     ax.grid()
-    daneSrednia['Średnia'].plot( kind = 'line', title = ('Średnia z wynikow Gooogle Trends'), grid = True, fontsize = 11, figsize = ( 8, 8 ) )
+    daneSrednia['Średnia występowania haseł'].plot( kind = 'line', title = ('Średnia z wynikow Gooogle Trends'), grid = True, fontsize = 11, figsize = ( 8, 8 ) )
     ax.legend()
     plt.xlabel("Data")
     fig.savefig('trendsSrednia', dpi=None, facecolor='w', edgecolor='w',\
